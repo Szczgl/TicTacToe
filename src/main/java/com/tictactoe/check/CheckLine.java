@@ -11,9 +11,9 @@ public class CheckLine {
     int countO;
     int countDownCheckList;
 
-    UserGetName userGetName = new UserGetName();
-    CreateBoard3x3 createBoard3X3 = new CreateBoard3x3();
-    UserChoice userChoice = new UserChoice();
+    UserGetName userGetName;
+    CreateBoard3x3 createBoard3X3;
+    UserChoice userChoice;
 
     public boolean endGame = false;
 

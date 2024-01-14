@@ -12,8 +12,10 @@ public class StartGame {
     CreateBoard3x3 createBoard3X3 = new CreateBoard3x3();
     DrawBoard3x3 drawBoard3x3 = new DrawBoard3x3();
     UserGetName userGetName = new UserGetName();
-    CheckLine checkLine = new CheckLine();
-    UserMove userMove = new UserMove();
+    CheckLine checkLine;
+    UserMove userMove;
+    CreateBoard3x3 createBoard3x3;
+
 
 
 
@@ -21,18 +23,18 @@ public class StartGame {
 
         userGetName.getName();
         createBoard3X3.declarationEmptyBoard();
-        drawBoard3x3.drawBoard();
-        for (int i = 1; i < 10; i++) {
-            userMove.moveGamerUserOne();
-            if (checkLine.isEndGame()) {
-                //scanner.close();
-                break;
-            }
-            userMove.moveGamerUserTwo();
-            if (checkLine.isEndGame()) {
-                //scanner.close();
-                break;
-            }
-        }
+        drawBoard3x3.drawBoard(createBoard3x3);
+//        for (int i = 1; i < 10; i++) {
+//            userMove.moveGamerUserOne();
+//            if (checkLine.isEndGame()) {
+//                //scanner.close();
+//                break;
+//            }
+//            userMove.moveGamerUserTwo();
+//            if (checkLine.isEndGame()) {
+//                //scanner.close();
+//                break;
+//            }
+//        }
     }
 }

@@ -4,33 +4,22 @@ import com.tictactoe.user.UserChoice;
 
 public class DrawBoard3x3 {
 
-    UserChoice userChoice = new UserChoice();
 
-//    public DrawBoard3x3(UserChoice userChoice) {
-//        this.userChoice = userChoice;
-//    }
-
-//    public void setUserChoice(UserChoice userChoice) {
-//        this.userChoice = userChoice;
-//    }
-
-
-
-    public void drawBoard() {
+    public void drawBoard(CreateBoard3x3 createBoard3x3) {
         System.out.println("   1 | 2 | 3 \n" );
-        System.out.println("1  " + userChoice.getBoard()[0][0] + " | " + userChoice.getBoard()[0][1] + " | " + userChoice.getBoard()[0][2]);
+        System.out.println("1  " + createBoard3x3.getBoard()[0][0] + " | " + createBoard3x3.getBoard()[0][1] + " | " + createBoard3x3.getBoard()[0][2]);
         System.out.println("  ---+---+---");
-        System.out.println("2  " + userChoice.getBoard()[1][0] + " | " + userChoice.getBoard()[1][1] + " | " + userChoice.getBoard()[1][2]);
+        System.out.println("2  " + createBoard3x3.getBoard()[1][0] + " | " + createBoard3x3.getBoard()[1][1] + " | " + createBoard3x3.getBoard()[1][2]);
         System.out.println("  ---+---+---");
-        System.out.println("3  " + userChoice.getBoard()[2][0] + " | " + userChoice.getBoard()[2][1] + " | " + userChoice.getBoard()[2][2]);
+        System.out.println("3  " + createBoard3x3.getBoard()[2][0] + " | " + createBoard3x3.getBoard()[2][1] + " | " + createBoard3x3.getBoard()[2][2]);
 
     }
 
-    public void drawBoardEnd() {
-        System.out.println(" " + userChoice.getBoard()[0][0] + " | " + userChoice.getBoard()[0][1] + " | " + userChoice.getBoard()[0][2]);
+    public void drawBoardEnd(CreateBoard3x3 createBoard3x3) {
+        System.out.println(" " + createBoard3x3.getBoard()[0][0] + " | " + createBoard3x3.getBoard()[0][1] + " | " + createBoard3x3.getBoard()[0][2]);
         System.out.println("---+---+---");
-        System.out.println(" " + userChoice.getBoard()[1][0] + " | " + userChoice.getBoard()[1][1] + " | " + userChoice.getBoard()[1][2]);
+        System.out.println(" " + createBoard3x3.getBoard()[1][0] + " | " + createBoard3x3.getBoard()[1][1] + " | " + createBoard3x3.getBoard()[1][2]);
         System.out.println("---+---+---");
-        System.out.println(" " + userChoice.getBoard()[2][0] + " | " + userChoice.getBoard()[2][1] + " | " + userChoice.getBoard()[2][2]);
+        System.out.println(" " + createBoard3x3.getBoard()[2][0] + " | " + createBoard3x3.getBoard()[2][1] + " | " + createBoard3x3.getBoard()[2][2]);
     }
 }

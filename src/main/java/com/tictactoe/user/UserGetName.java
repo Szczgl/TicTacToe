@@ -34,4 +34,6 @@ public class UserGetName {
     public String getSecondUserName() {
         return secondUserName;
     }
+
+
 }

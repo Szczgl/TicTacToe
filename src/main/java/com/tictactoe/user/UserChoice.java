@@ -9,19 +9,15 @@ public class UserChoice {
     private int firstNumberI;
     private int secondNumberJ;
 
-    CreateBoard3x3 createBoard3X3 = new CreateBoard3x3();
-
-//    public UserChoice(CreateBoard3x3 createBoard3X3) {
-//        this.createBoard3X3 = createBoard3X3;
-//    }
-
+    CreateBoard3x3 createBoard3X3;
 
     Scanner scanner = new Scanner(System.in);
     private String[][] board;
 
-//    public void setBoard(String[][] board) {
-//        this.board = board;
-//    }
+
+    public String[][] getBoard() {
+        return board;
+    }
 
     public void choiceX() {
         int userOneChoiceX = scanner.nextInt();
@@ -46,8 +42,8 @@ public class UserChoice {
             createBoard3X3.getBoard()[firstNumberI][secondNumberJ] = "O";
         }
     }
-    public String[][] getBoard() {
-        return board;
-    }
 
+    public void setBoard(String[][] board) {
+        this.board = board;
+    }
 }
