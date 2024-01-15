@@ -2,6 +2,7 @@ package com.tictactoe.user;
 
 import com.tictactoe.board.CreateBoard3x3;
 
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class UserChoice {
@@ -9,41 +10,40 @@ public class UserChoice {
     private int firstNumberI;
     private int secondNumberJ;
 
-    CreateBoard3x3 createBoard3X3;
-
     Scanner scanner = new Scanner(System.in);
-    private String[][] board;
 
-
-    public String[][] getBoard() {
-        return board;
+    public void userInput() {
+        int userChoice = scanner.nextInt();
+        scanner.nextLine();
+        firstNumberI = (userChoice / 10) - 1;
+        secondNumberJ = (userChoice % 10) - 1;
     }
 
-    public void choiceX() {
-        int userOneChoiceX = scanner.nextInt();
-        scanner.nextLine();
-        int firstNumberI = (userOneChoiceX / 10) - 1;
-        int secondNumberJ = (userOneChoiceX % 10) - 1;
-        if ("X".equals(createBoard3X3.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard3X3.getBoard()[firstNumberI][secondNumberJ])) {
-            System.out.println("wybierz inne pole to już jest zajęte");
+
+
+    public void choiceX(CreateBoard3x3 createBoard3x3) {
+        userInput();
+        if (firstNumberI >= 0 && firstNumberI < createBoard3x3.getBoardSize() && secondNumberJ >= 0 && secondNumberJ < createBoard3x3.getBoardSize()) {
+            if ("X".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ])) {
+                System.out.println("wybierz inne pole to już jest zajęte");
+            } else {
+                createBoard3x3.setBoard(firstNumberI, secondNumberJ, "X");
+            }
         } else {
-            createBoard3X3.getBoard()[firstNumberI][secondNumberJ] = "X";
+            System.out.println("Nieprawidłowe współrzędne.");
         }
     }
 
-    public void choiceO() {
-        int userTwoChoiceO = scanner.nextInt();
-        scanner.nextLine();
-        int firstNumberI = (userTwoChoiceO / 10) - 1;
-        int secondNumberJ = (userTwoChoiceO % 10) - 1;
-        if ("X".equals(createBoard3X3.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard3X3.getBoard()[firstNumberI][secondNumberJ])) {
-            System.out.println("wybierz inne pole to już jest zajęte");
+    public void choiceO(CreateBoard3x3 createBoard3x3) {
+        userInput();
+        if (firstNumberI >= 0 && firstNumberI < createBoard3x3.getBoardSize() && secondNumberJ >= 0 && secondNumberJ < createBoard3x3.getBoardSize()) {
+            if ("X".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ])) {
+                System.out.println("wybierz inne pole to już jest zajęte");
+            } else {
+                createBoard3x3.setBoard(firstNumberI, secondNumberJ, "O");
+            }
         } else {
-            createBoard3X3.getBoard()[firstNumberI][secondNumberJ] = "O";
+            System.out.println("Nieprawidłowe współrzędne.");
         }
-    }
-
-    public void setBoard(String[][] board) {
-        this.board = board;
     }
 }

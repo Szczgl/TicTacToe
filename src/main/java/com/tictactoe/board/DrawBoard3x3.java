@@ -1,12 +1,10 @@
 package com.tictactoe.board;
 
-import com.tictactoe.user.UserChoice;
-
 public class DrawBoard3x3 {
 
 
     public void drawBoard(CreateBoard3x3 createBoard3x3) {
-        System.out.println("   1 | 2 | 3 \n" );
+        System.out.println("   1   2   3 " );
         System.out.println("1  " + createBoard3x3.getBoard()[0][0] + " | " + createBoard3x3.getBoard()[0][1] + " | " + createBoard3x3.getBoard()[0][2]);
         System.out.println("  ---+---+---");
         System.out.println("2  " + createBoard3x3.getBoard()[1][0] + " | " + createBoard3x3.getBoard()[1][1] + " | " + createBoard3x3.getBoard()[1][2]);

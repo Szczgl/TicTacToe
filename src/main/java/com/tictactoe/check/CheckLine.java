@@ -1,9 +1,7 @@
 package com.tictactoe.check;
 
 import com.tictactoe.board.CreateBoard3x3;
-import com.tictactoe.user.UserChoice;
 import com.tictactoe.user.UserGetName;
-import com.tictactoe.user.UserMove;
 
 public class CheckLine {
 
@@ -11,91 +9,87 @@ public class CheckLine {
     int countO;
     int countDownCheckList;
 
-    UserGetName userGetName;
-    CreateBoard3x3 createBoard3X3;
-    UserChoice userChoice;
-
     public boolean endGame = false;
 
-    public void checkLineAll() {
-        checkLineCol();
-        checkLineRow();
-        checkLineSlash();
-        checkLineBackslash();
+    public void checkLineAll(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+        checkLineCol(createBoard3x3, userGetName);
+        checkLineRow(createBoard3x3, userGetName);
+        checkLineSlash(createBoard3x3, userGetName);
+        checkLineBackslash(createBoard3x3, userGetName);
 
     }
 
-    private void checkLineCol() {
+    private void checkLineCol(CreateBoard3x3 createBoard3X3, UserGetName userGetName) {
         countDownCheckList = createBoard3X3.getBoardSize() - 1;
         while (countDownCheckList >= 0) {
             countX = 0;
             countO = 0;
             for (int i = 0; i < createBoard3X3.getBoardSize(); i++) {
-                if (userChoice.getBoard()[i][countDownCheckList].equals("X")) {
+                if (createBoard3X3.getBoard()[i][countDownCheckList].equals("X")) {
                     countX++;
-                    checkWin();
+                    checkWin(userGetName);
                 }
-                if (userChoice.getBoard()[i][countDownCheckList].equals("O")) {
+                if (createBoard3X3.getBoard()[i][countDownCheckList].equals("O")) {
                     countO++;
-                    checkWin();
+                    checkWin(userGetName);
                 }
             }
             countDownCheckList--;
         }
     }
 
-    private void checkLineRow() {
-        countDownCheckList = createBoard3X3.getBoardSize() - 1;
+    private void checkLineRow(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+        countDownCheckList = createBoard3x3.getBoardSize() - 1;
         while (countDownCheckList >= 0) {
             countX = 0;
             countO = 0;
-            for (int i = 0; i < createBoard3X3.getBoardSize(); i++) {
-                if (userChoice.getBoard()[countDownCheckList][i].equals("X")) {
+            for (int i = 0; i < createBoard3x3.getBoardSize(); i++) {
+                if (createBoard3x3.getBoard()[countDownCheckList][i].equals("X")) {
                     countX++;
-                    checkWin();
+                    checkWin(userGetName);
                 }
-                if (userChoice.getBoard()[countDownCheckList][i].equals("O")) {
+                if (createBoard3x3.getBoard()[countDownCheckList][i].equals("O")) {
                     countO++;
-                    checkWin();
+                    checkWin(userGetName);
                 }
             }
             countDownCheckList--;
         }
     }
 
-    public void checkLineSlash() {
+    private void checkLineSlash(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
         countX = 0;
         countO = 0;
-        for (int i = 0; i < createBoard3X3.getBoardSize(); i++) {
-            if (userChoice.getBoard()[i][i].equals("X")) {
+        for (int i = 0; i < createBoard3x3.getBoardSize(); i++) {
+            if (createBoard3x3.getBoard()[i][i].equals("X")) {
                 countX++;
-                checkWin();
+                checkWin(userGetName);
             }
-            if (userChoice.getBoard()[i][i].equals("O")) {
+            if (createBoard3x3.getBoard()[i][i].equals("O")) {
                 countO++;
-                checkWin();
+                checkWin(userGetName);
             }
         }
     }
 
-    private void checkLineBackslash() {
+    private void checkLineBackslash(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
         countX = 0;
         countO = 0;
-        countDownCheckList = createBoard3X3.getBoardSize() - 1;
-        for (int i = 0; i < createBoard3X3.getBoardSize(); i++) {
-            if (userChoice.getBoard()[i][countDownCheckList].equals("X")) {
+        countDownCheckList = createBoard3x3.getBoardSize() - 1;
+        for (int i = 0; i < createBoard3x3.getBoardSize(); i++) {
+            if (createBoard3x3.getBoard()[i][countDownCheckList].equals("X")) {
                 countX++;
-                checkWin();
+                checkWin(userGetName);
             }
-            if (userChoice.getBoard()[i][countDownCheckList].equals("O")) {
+            if (createBoard3x3.getBoard()[i][countDownCheckList].equals("O")) {
                 countO++;
-                checkWin();
+                checkWin(userGetName);
             }
             countDownCheckList--;
         }
     }
 
-    private void checkWin() {
+    private void checkWin(UserGetName userGetName) {
         if (countX == 3) {
             System.out.println("wygrał gracz " + userGetName.getFirstUserName());
             endGame = true;

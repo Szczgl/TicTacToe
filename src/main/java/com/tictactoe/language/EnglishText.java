@@ -14,6 +14,6 @@ public class EnglishText implements LanguageText {
 
     @Override
     public void hello(String firstUserName, String secondUserName) {
-        System.out.println("Hello " + firstUserName + " , " + secondUserName);
+        System.out.println("Hello " + firstUserName + " , " + secondUserName + "\n");
     }
 }

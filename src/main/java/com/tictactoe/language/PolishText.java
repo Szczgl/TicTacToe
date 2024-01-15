@@ -14,6 +14,6 @@ public class PolishText implements LanguageText {
 
     @Override
     public void hello(String firstUserName, String secondUserName) {
-        System.out.println("Witajcie " + firstUserName + " , " + secondUserName);
+        System.out.println("Witajcie " + firstUserName + " , " + secondUserName + "\n");
     }
 }
