@@ -1,7 +1,5 @@
 package com.tictactoe.board;
 
-import java.util.Arrays;
-
 public class CreateBoard3x3 {
     private int boardSize = 3;
     private String[][] board = new String[boardSize][boardSize];

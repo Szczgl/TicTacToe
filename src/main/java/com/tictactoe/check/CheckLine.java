@@ -5,9 +5,9 @@ import com.tictactoe.user.UserGetName;
 
 public class CheckLine {
 
-    int countX;
-    int countO;
-    int countDownCheckList;
+    private int countX;
+    private int countO;
+    private int countDownCheckList;
 
     public boolean endGame = false;
 
@@ -91,11 +91,11 @@ public class CheckLine {
 
     private void checkWin(UserGetName userGetName) {
         if (countX == 3) {
-            System.out.println("wygrał gracz " + userGetName.getFirstUserName());
+            System.out.println("\nwygrał gracz " + userGetName.getFirstUserName() + "\n");
             endGame = true;
         }
         if (countO == 3) {
-            System.out.println("wygrał gracz " + userGetName.getSecondUserName());
+            System.out.println("\nwygrał gracz " + userGetName.getSecondUserName() + "\n");
             endGame = true;
         }
     }
