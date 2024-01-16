@@ -14,7 +14,7 @@ public class LanguageSelection {
     public LanguageText chooseLanguage() {
         System.out.println("1 - Polski");
         System.out.println("2 - English\n");
-        System.out.print("Choose language / Wybierz język : ");
+        System.out.print("Wybierz język // Choose language : ");
         String languageChoose = scanner.nextLine();
         switch (languageChoose) {
             case "1" :
@@ -24,7 +24,7 @@ public class LanguageSelection {
                 text = new EnglishText();
                 break;
             default:
-                System.out.println("zły wybór / bad choice");
+                System.out.println("zły wybór // bad choice");
                 chooseLanguage();
         }
 

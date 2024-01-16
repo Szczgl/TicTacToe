@@ -1,6 +1,7 @@
 package com.tictactoe.check;
 
 import com.tictactoe.board.CreateBoard3x3;
+import com.tictactoe.language.LanguageText;
 import com.tictactoe.user.UserGetName;
 
 public class CheckLine {
@@ -8,8 +9,9 @@ public class CheckLine {
     private int countX;
     private int countO;
     private int countDownCheckList;
-
     public boolean endGame = false;
+
+    LanguageText text;
 
     public void checkLineAll(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
         checkLineCol(createBoard3x3, userGetName);
@@ -90,12 +92,13 @@ public class CheckLine {
     }
 
     private void checkWin(UserGetName userGetName) {
+        text = userGetName.getText();
         if (countX == 3) {
-            System.out.println("\nwygrał gracz " + userGetName.getFirstUserName() + "\n");
+            System.out.println("\n" + text.userWin() + userGetName.getFirstUserName() + "\n");
             endGame = true;
         }
         if (countO == 3) {
-            System.out.println("\nwygrał gracz " + userGetName.getSecondUserName() + "\n");
+            System.out.println("\n" + text.userWin()  + userGetName.getSecondUserName() + "\n");
             endGame = true;
         }
     }

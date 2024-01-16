@@ -3,6 +3,7 @@ package com.tictactoe;
 import com.tictactoe.board.CreateBoard3x3;
 import com.tictactoe.board.DrawBoard3x3;
 import com.tictactoe.check.CheckLine;
+import com.tictactoe.language.LanguageText;
 import com.tictactoe.user.UserGetName;
 import com.tictactoe.user.UserMove;
 

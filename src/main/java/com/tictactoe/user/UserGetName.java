@@ -18,6 +18,8 @@ public class UserGetName {
         this.text = text;
     }
 
+
+
     public void getName() {
         setLanguageText(languageSelection.chooseLanguage());
         text.userGetNameFirstGamer();
@@ -35,5 +37,7 @@ public class UserGetName {
         return secondUserName;
     }
 
-
+    public LanguageText getText() {
+        return text;
+    }
 }
