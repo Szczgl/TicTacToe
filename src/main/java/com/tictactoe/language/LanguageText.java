@@ -9,6 +9,8 @@ public interface LanguageText {
     String userWin();
     void incorrectCoordinates();
     void fieldOccupied();
+    String draw();
+
 
 
 }

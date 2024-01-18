@@ -36,4 +36,9 @@ public class PolishText implements LanguageText {
     public void fieldOccupied() {
         System.out.print("Wybierz inne pole to już jest zajęte, podaj ponownie współrzędne: ");
     }
+
+    @Override
+    public String draw() {
+        return "  REMIS";
+    }
 }

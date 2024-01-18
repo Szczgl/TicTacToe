@@ -13,6 +13,14 @@ public class CheckLine {
 
     LanguageText text;
 
+    public int getCountX() {
+        return countX;
+    }
+
+    public int getCountO() {
+        return countO;
+    }
+
     public void checkLineAll(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
         checkLineCol(createBoard3x3, userGetName);
         checkLineRow(createBoard3x3, userGetName);
@@ -21,7 +29,7 @@ public class CheckLine {
 
     }
 
-    private void checkLineCol(CreateBoard3x3 createBoard3X3, UserGetName userGetName) {
+    public void checkLineCol(CreateBoard3x3 createBoard3X3, UserGetName userGetName) {
         countDownCheckList = createBoard3X3.getBoardSize() - 1;
         while (countDownCheckList >= 0) {
             countX = 0;
@@ -40,7 +48,7 @@ public class CheckLine {
         }
     }
 
-    private void checkLineRow(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+    public void checkLineRow(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
         countDownCheckList = createBoard3x3.getBoardSize() - 1;
         while (countDownCheckList >= 0) {
             countX = 0;
@@ -59,7 +67,7 @@ public class CheckLine {
         }
     }
 
-    private void checkLineSlash(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+    public void checkLineSlash(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
         countX = 0;
         countO = 0;
         for (int i = 0; i < createBoard3x3.getBoardSize(); i++) {
@@ -74,7 +82,7 @@ public class CheckLine {
         }
     }
 
-    private void checkLineBackslash(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+    public void checkLineBackslash(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
         countX = 0;
         countO = 0;
         countDownCheckList = createBoard3x3.getBoardSize() - 1;
@@ -91,7 +99,7 @@ public class CheckLine {
         }
     }
 
-    private void checkWin(UserGetName userGetName) {
+    public void checkWin(UserGetName userGetName) {
         text = userGetName.getText();
         if (countX == 3) {
             System.out.println("\n" + text.userWin() + userGetName.getFirstUserName() + "\n");

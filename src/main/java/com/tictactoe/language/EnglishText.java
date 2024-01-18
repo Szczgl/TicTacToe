@@ -36,4 +36,9 @@ public class EnglishText implements LanguageText {
     public void fieldOccupied() {
         System.out.print("Select another field - it is already taken, enter the coordinates again: ");
     }
+
+    @Override
+    public String draw() {
+        return "   DRAW";
+    }
 }

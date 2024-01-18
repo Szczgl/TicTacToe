@@ -14,6 +14,9 @@ public class StartGame {
     UserGetName userGetName = new UserGetName();
     CheckLine checkLine = new CheckLine();
     UserMove userMove = new UserMove();
+    LanguageText text;
+
+    int count = 0;
 
     public void run() {
         userGetName.getName();
@@ -21,10 +24,19 @@ public class StartGame {
         drawBoard3x3.drawBoard(createBoard3X3);
         while (!checkLine.isEndGame()) {
             userMove.moveGamerUserOne(userGetName, createBoard3X3, drawBoard3x3, checkLine);
+            count++;
             if (checkLine.isEndGame()) {
                 break;
             }
+            if (count == 9) {
+                break;
+            }
             userMove.moveGamerUserTwo(userGetName, createBoard3X3, drawBoard3x3, checkLine);
+            count++;
+        }
+        text = userGetName.getText();
+        if (!checkLine.isEndGame()) {
+            System.out.println("\n   " + text.draw());
         }
     }
 }
