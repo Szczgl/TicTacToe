@@ -8,10 +8,21 @@ public class CheckLine {
 
     private int countX;
     private int countO;
+
+    private int count0Return;
+    private int countXReturn;
     private int countDownCheckList;
     public boolean endGame = false;
 
     LanguageText text;
+
+    public int getCount0Return() {
+        return count0Return;
+    }
+
+    public int getCountXReturn() {
+        return countXReturn;
+    }
 
     public int getCountX() {
         return countX;

@@ -24,9 +24,12 @@ public class UserGetName {
         setLanguageText(languageSelection.chooseLanguage());
         text.userGetNameFirstGamer();
         firstUserName = scanner.nextLine();
-        text.userGetNameSecondGamer();
+        text.choicePvPOrPvE();
         secondUserName = scanner.nextLine();
-        text.hello(firstUserName, secondUserName);
+        if (!secondUserName.isEmpty()) {
+            text.hello(firstUserName, secondUserName);
+        }
+        text.hello(firstUserName);
     }
 
     public String getFirstUserName() {
@@ -39,5 +42,9 @@ public class UserGetName {
 
     public LanguageText getText() {
         return text;
+    }
+
+    public void setSecondUserName(String secondUserName) {
+        this.secondUserName = secondUserName;
     }
 }

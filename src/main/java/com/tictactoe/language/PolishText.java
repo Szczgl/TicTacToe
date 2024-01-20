@@ -8,13 +8,18 @@ public class PolishText implements LanguageText {
     }
 
     @Override
-    public void userGetNameSecondGamer() {
-        System.out.print("Graczu nr 2 podaj imie: ");
+    public void choicePvPOrPvE() {
+        System.out.print("Jeśli chcesz grać z komputerem naciśnij ENTER. Jak jesteś graczem wpisz swoje imię: ");
     }
 
     @Override
     public void hello(String firstUserName, String secondUserName) {
         System.out.println("Witajcie " + firstUserName + " , " + secondUserName + "\n");
+    }
+
+    @Override
+    public void hello(String firstUserName) {
+        System.out.println("Witaj " + firstUserName + "\n");
     }
 
     @Override
@@ -24,7 +29,7 @@ public class PolishText implements LanguageText {
 
     @Override
     public String userWin() {
-        return " Wygrał gracz: ";
+        return " Wygrał ";
     }
 
     @Override
@@ -40,5 +45,10 @@ public class PolishText implements LanguageText {
     @Override
     public String draw() {
         return "  REMIS";
+    }
+
+    @Override
+    public String computer() {
+        return "komputer";
     }
 }

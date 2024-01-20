@@ -8,13 +8,18 @@ public class EnglishText implements LanguageText {
     }
 
     @Override
-    public void userGetNameSecondGamer() {
-        System.out.print("Player no. 2, give your name: ");
+    public void choicePvPOrPvE() {
+        System.out.print("If you want to play with computer, press ENTER. If you are a player, enter your name:");
     }
 
     @Override
     public void hello(String firstUserName, String secondUserName) {
         System.out.println("Hello " + firstUserName + " , " + secondUserName + "\n");
+    }
+
+    @Override
+    public void hello(String firstUserName) {
+        System.out.println("Hello " + firstUserName + "\n");
     }
 
     @Override
@@ -24,7 +29,7 @@ public class EnglishText implements LanguageText {
 
     @Override
     public String userWin() {
-        return " The player won: ";
+        return " Won ";
     }
 
     @Override
@@ -40,5 +45,10 @@ public class EnglishText implements LanguageText {
     @Override
     public String draw() {
         return "   DRAW";
+    }
+
+    @Override
+    public String computer() {
+        return " computer";
     }
 }
