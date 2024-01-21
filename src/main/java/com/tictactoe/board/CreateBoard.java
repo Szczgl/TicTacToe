@@ -1,6 +1,6 @@
 package com.tictactoe.board;
 
-public class CreateBoard3x3 {
+public class CreateBoard {
     private int boardSize = 3;
     private String[][] board = new String[boardSize][boardSize];
 

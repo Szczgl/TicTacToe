@@ -24,7 +24,7 @@ public class PolishText implements LanguageText {
 
     @Override
     public String fieldSelection() {
-        return " podaj współrzędne pierwsza liczba poziomo →, druga pionowo ↓ (np 11 lub 23): ";
+        return " podaj współrzędne pierwsza liczba poziomo →, druga pionowo ↓ (np 11 lub 02): ";
     }
 
     @Override

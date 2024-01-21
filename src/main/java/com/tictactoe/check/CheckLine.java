@@ -1,6 +1,6 @@
 package com.tictactoe.check;
 
-import com.tictactoe.board.CreateBoard3x3;
+import com.tictactoe.board.CreateBoard;
 import com.tictactoe.language.LanguageText;
 import com.tictactoe.user.UserGetName;
 
@@ -32,25 +32,25 @@ public class CheckLine {
         return countO;
     }
 
-    public void checkLineAll(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
-        checkLineCol(createBoard3x3, userGetName);
-        checkLineRow(createBoard3x3, userGetName);
-        checkLineSlash(createBoard3x3, userGetName);
-        checkLineBackslash(createBoard3x3, userGetName);
+    public void checkLineAll(CreateBoard createBoard, UserGetName userGetName) {
+        checkLineCol(createBoard, userGetName);
+        checkLineRow(createBoard, userGetName);
+        checkLineSlash(createBoard, userGetName);
+        checkLineBackslash(createBoard, userGetName);
 
     }
 
-    public void checkLineCol(CreateBoard3x3 createBoard3X3, UserGetName userGetName) {
-        countDownCheckList = createBoard3X3.getBoardSize() - 1;
+    public void checkLineCol(CreateBoard createBoard, UserGetName userGetName) {
+        countDownCheckList = createBoard.getBoardSize() - 1;
         while (countDownCheckList >= 0) {
             countX = 0;
             countO = 0;
-            for (int i = 0; i < createBoard3X3.getBoardSize(); i++) {
-                if (createBoard3X3.getBoard()[i][countDownCheckList].equals("X")) {
+            for (int i = 0; i < createBoard.getBoardSize(); i++) {
+                if (createBoard.getBoard()[i][countDownCheckList].equals("X")) {
                     countX++;
                     checkWin(userGetName);
                 }
-                if (createBoard3X3.getBoard()[i][countDownCheckList].equals("O")) {
+                if (createBoard.getBoard()[i][countDownCheckList].equals("O")) {
                     countO++;
                     checkWin(userGetName);
                 }
@@ -59,17 +59,17 @@ public class CheckLine {
         }
     }
 
-    public void checkLineRow(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
-        countDownCheckList = createBoard3x3.getBoardSize() - 1;
+    public void checkLineRow(CreateBoard createBoard, UserGetName userGetName) {
+        countDownCheckList = createBoard.getBoardSize() - 1;
         while (countDownCheckList >= 0) {
             countX = 0;
             countO = 0;
-            for (int i = 0; i < createBoard3x3.getBoardSize(); i++) {
-                if (createBoard3x3.getBoard()[countDownCheckList][i].equals("X")) {
+            for (int i = 0; i < createBoard.getBoardSize(); i++) {
+                if (createBoard.getBoard()[countDownCheckList][i].equals("X")) {
                     countX++;
                     checkWin(userGetName);
                 }
-                if (createBoard3x3.getBoard()[countDownCheckList][i].equals("O")) {
+                if (createBoard.getBoard()[countDownCheckList][i].equals("O")) {
                     countO++;
                     checkWin(userGetName);
                 }
@@ -78,31 +78,31 @@ public class CheckLine {
         }
     }
 
-    public void checkLineSlash(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+    public void checkLineSlash(CreateBoard createBoard, UserGetName userGetName) {
         countX = 0;
         countO = 0;
-        for (int i = 0; i < createBoard3x3.getBoardSize(); i++) {
-            if (createBoard3x3.getBoard()[i][i].equals("X")) {
+        for (int i = 0; i < createBoard.getBoardSize(); i++) {
+            if (createBoard.getBoard()[i][i].equals("X")) {
                 countX++;
                 checkWin(userGetName);
             }
-            if (createBoard3x3.getBoard()[i][i].equals("O")) {
+            if (createBoard.getBoard()[i][i].equals("O")) {
                 countO++;
                 checkWin(userGetName);
             }
         }
     }
 
-    public void checkLineBackslash(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+    public void checkLineBackslash(CreateBoard createBoard, UserGetName userGetName) {
         countX = 0;
         countO = 0;
-        countDownCheckList = createBoard3x3.getBoardSize() - 1;
-        for (int i = 0; i < createBoard3x3.getBoardSize(); i++) {
-            if (createBoard3x3.getBoard()[i][countDownCheckList].equals("X")) {
+        countDownCheckList = createBoard.getBoardSize() - 1;
+        for (int i = 0; i < createBoard.getBoardSize(); i++) {
+            if (createBoard.getBoard()[i][countDownCheckList].equals("X")) {
                 countX++;
                 checkWin(userGetName);
             }
-            if (createBoard3x3.getBoard()[i][countDownCheckList].equals("O")) {
+            if (createBoard.getBoard()[i][countDownCheckList].equals("O")) {
                 countO++;
                 checkWin(userGetName);
             }

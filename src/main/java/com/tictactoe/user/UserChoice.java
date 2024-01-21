@@ -1,6 +1,6 @@
 package com.tictactoe.user;
 
-import com.tictactoe.board.CreateBoard3x3;
+import com.tictactoe.board.CreateBoard;
 import com.tictactoe.language.LanguageText;
 
 import java.util.Scanner;
@@ -18,8 +18,8 @@ public class UserChoice {
         text = userGetName.getText();
         if (scanner.hasNextInt()) {
             userChoice = scanner.nextInt();
-            firstNumberI = (userChoice / 10) - 1;
-            secondNumberJ = (userChoice % 10) - 1;
+            firstNumberI = (userChoice / 10);
+            secondNumberJ = (userChoice % 10);
         } else {
             text.incorrectCoordinates();
             scanner.next();
@@ -28,35 +28,35 @@ public class UserChoice {
     }
 
 
-    public void choiceX(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+    public void choiceX(CreateBoard createBoard, UserGetName userGetName) {
         text = userGetName.getText();
         userInput(userGetName);
-        if (firstNumberI >= 0 && firstNumberI < createBoard3x3.getBoardSize() && secondNumberJ >= 0 && secondNumberJ < createBoard3x3.getBoardSize()) {
-            if ("X".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ])) {
+        if (firstNumberI >= 0 && firstNumberI < createBoard.getBoardSize() && secondNumberJ >= 0 && secondNumberJ < createBoard.getBoardSize()) {
+            if ("X".equals(createBoard.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard.getBoard()[firstNumberI][secondNumberJ])) {
                 text.fieldOccupied();
-                choiceX(createBoard3x3, userGetName);
+                choiceX(createBoard, userGetName);
             } else {
-                createBoard3x3.setBoard(firstNumberI, secondNumberJ, "X");
+                createBoard.setBoard(firstNumberI, secondNumberJ, "X");
             }
         } else {
             text.incorrectCoordinates();
-            choiceX(createBoard3x3,userGetName);
+            choiceX(createBoard,userGetName);
         }
     }
 
-    public void choiceO(CreateBoard3x3 createBoard3x3, UserGetName userGetName) {
+    public void choiceO(CreateBoard createBoard, UserGetName userGetName) {
         text = userGetName.getText();
         userInput(userGetName);
-        if (firstNumberI >= 0 && firstNumberI < createBoard3x3.getBoardSize() && secondNumberJ >= 0 && secondNumberJ < createBoard3x3.getBoardSize()) {
-            if ("X".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ])) {
+        if (firstNumberI >= 0 && firstNumberI < createBoard.getBoardSize() && secondNumberJ >= 0 && secondNumberJ < createBoard.getBoardSize()) {
+            if ("X".equals(createBoard.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard.getBoard()[firstNumberI][secondNumberJ])) {
                 text.fieldOccupied();
-                choiceO(createBoard3x3, userGetName);
+                choiceO(createBoard, userGetName);
             } else {
-                createBoard3x3.setBoard(firstNumberI, secondNumberJ, "O");
+                createBoard.setBoard(firstNumberI, secondNumberJ, "O");
             }
         } else {
             text.incorrectCoordinates();
-            choiceO(createBoard3x3,userGetName);
+            choiceO(createBoard,userGetName);
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.tictactoe.computer;
 
-import com.tictactoe.board.CreateBoard3x3;
+import com.tictactoe.board.CreateBoard;
 
 import java.util.Random;
 
@@ -12,26 +12,26 @@ public class ComputerChoice {
     private int secondNumberJ;
     private boolean check = true;
 
-    public void choiceComputer(CreateBoard3x3 createBoard3x3) {
+    public void choiceComputer(CreateBoard createBoard) {
 
         int firstNumberI = random.nextInt(0,3);
         int secondNumberJ = random.nextInt(0,3);
-        if ("X".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ])) {
-            choiceComputer(createBoard3x3);
+        if ("X".equals(createBoard.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard.getBoard()[firstNumberI][secondNumberJ])) {
+            choiceComputer(createBoard);
         } else {
-                createBoard3x3.setBoard(firstNumberI, secondNumberJ, "O");
+                createBoard.setBoard(firstNumberI, secondNumberJ, "O");
         }
     }
 
-    public void putXOrO (CreateBoard3x3 createBoard3x3) {
-        if ("X".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard3x3.getBoard()[firstNumberI][secondNumberJ])) {
-            choiceComputerAlgorithm(createBoard3x3);
+    public void putXOrO (CreateBoard createBoard) {
+        if ("X".equals(createBoard.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard.getBoard()[firstNumberI][secondNumberJ])) {
+            choiceComputerAlgorithm(createBoard);
         } else {
-            createBoard3x3.setBoard(firstNumberI, secondNumberJ, "O");
+            createBoard.setBoard(firstNumberI, secondNumberJ, "O");
         }
     }
 
-    public void choiceComputerAlgorithm(CreateBoard3x3 createBoard3x3) {
+    public void choiceComputerAlgorithm(CreateBoard createBoard) {
 
         int board1 = 0;
         int board2 = 0;
@@ -45,59 +45,59 @@ public class ComputerChoice {
 
 
 
-        if ("X".equals(createBoard3x3.getBoard()[0][0])) {
+        if ("X".equals(createBoard.getBoard()[0][0])) {
             board1 = 1;
         }
-        if ("X".equals(createBoard3x3.getBoard()[0][1])) {
+        if ("X".equals(createBoard.getBoard()[0][1])) {
             board2 = 1;
         }
-        if ("X".equals(createBoard3x3.getBoard()[0][2])) {
+        if ("X".equals(createBoard.getBoard()[0][2])) {
             board3 = 1;
         }
-        if ("X".equals(createBoard3x3.getBoard()[1][0])) {
+        if ("X".equals(createBoard.getBoard()[1][0])) {
             board4 = 1;
         }
-        if ("X".equals(createBoard3x3.getBoard()[1][1])) {
+        if ("X".equals(createBoard.getBoard()[1][1])) {
             board5 = 1;
         }
-        if ("X".equals(createBoard3x3.getBoard()[1][2])) {
+        if ("X".equals(createBoard.getBoard()[1][2])) {
             board6 = 1;
         }
-        if ("X".equals(createBoard3x3.getBoard()[2][0])) {
+        if ("X".equals(createBoard.getBoard()[2][0])) {
             board7 = 1;
         }
-        if ("X".equals(createBoard3x3.getBoard()[2][1])) {
+        if ("X".equals(createBoard.getBoard()[2][1])) {
             board8 = 1;
         }
-        if ("X".equals(createBoard3x3.getBoard()[2][2])) {
+        if ("X".equals(createBoard.getBoard()[2][2])) {
             board9 = 1;
         }
 
-        if ("O".equals(createBoard3x3.getBoard()[0][0])) {
+        if ("O".equals(createBoard.getBoard()[0][0])) {
             board1 = -1;
         }
-        if ("O".equals(createBoard3x3.getBoard()[0][1])) {
+        if ("O".equals(createBoard.getBoard()[0][1])) {
             board2 = -1;
         }
-        if ("O".equals(createBoard3x3.getBoard()[0][2])) {
+        if ("O".equals(createBoard.getBoard()[0][2])) {
             board3 = -1;
         }
-        if ("O".equals(createBoard3x3.getBoard()[1][0])) {
+        if ("O".equals(createBoard.getBoard()[1][0])) {
             board4 = -1;
         }
-        if ("O".equals(createBoard3x3.getBoard()[1][1])) {
+        if ("O".equals(createBoard.getBoard()[1][1])) {
             board5 = -1;
         }
-        if ("O".equals(createBoard3x3.getBoard()[1][2])) {
+        if ("O".equals(createBoard.getBoard()[1][2])) {
             board6 = -1;
         }
-        if ("O".equals(createBoard3x3.getBoard()[2][0])) {
+        if ("O".equals(createBoard.getBoard()[2][0])) {
             board7 = -1;
         }
-        if ("O".equals(createBoard3x3.getBoard()[2][1])) {
+        if ("O".equals(createBoard.getBoard()[2][1])) {
             board8 = -1;
         }
-        if ("O".equals(createBoard3x3.getBoard()[2][2])) {
+        if ("O".equals(createBoard.getBoard()[2][2])) {
             board9 = -1;
         }
 
@@ -114,43 +114,43 @@ public class ComputerChoice {
             if (sum1 == -2) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = 0;
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum2 == -2) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = 1;
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum3 == -2) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = 2;
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum4 == -2) {
                 firstNumberI = 0;
                 secondNumberJ = random.nextInt(0, 3);
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum5 == -2) {
                 firstNumberI = 1;
                 secondNumberJ = random.nextInt(0, 3);
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum6 == -2) {
                 firstNumberI = 2;
                 secondNumberJ = random.nextInt(0, 3);
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum7 == -2) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = firstNumberI;
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum8 == -2) {
@@ -162,50 +162,50 @@ public class ComputerChoice {
                 } else {
                     secondNumberJ = 0;
                 }
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
 
             if (sum1 == 2) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = 0;
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum2 == 2) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = 1;
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum3 == 2) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = 2;
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum4 == 2) {
                 firstNumberI = 0;
                 secondNumberJ = random.nextInt(0, 3);
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum5 == 2) {
                 firstNumberI = 1;
                 secondNumberJ = random.nextInt(0, 3);
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum6 == 2) {
                 firstNumberI = 2;
                 secondNumberJ = random.nextInt(0, 3);
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum7 == 2) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = firstNumberI;
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
             if (sum8 == 2) {
@@ -217,7 +217,7 @@ public class ComputerChoice {
                 } else {
                     secondNumberJ = 0;
                 }
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
 
@@ -225,7 +225,7 @@ public class ComputerChoice {
                     || (sum5 <= 1 && sum5 >= -1) || (sum6 <= 1 && sum6 >= -1) || (sum7 <= 1 && sum7 >= -1) || (sum8 <= 1 && sum8 >= -1)) {
                 firstNumberI = random.nextInt(0, 3);
                 secondNumberJ = random.nextInt(0, 3);
-                putXOrO(createBoard3x3);
+                putXOrO(createBoard);
                 break;
             }
         }

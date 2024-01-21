@@ -1,7 +1,7 @@
 package com.tictactoe;
 
-import com.tictactoe.board.CreateBoard3x3;
-import com.tictactoe.board.DrawBoard3x3;
+import com.tictactoe.board.CreateBoard;
+import com.tictactoe.board.DrawBoard;
 import com.tictactoe.check.CheckLine;
 import com.tictactoe.computer.ComputerMove;
 import com.tictactoe.language.LanguageText;
@@ -10,8 +10,8 @@ import com.tictactoe.user.UserMove;
 
 public class StartGame {
 
-    CreateBoard3x3 createBoard3X3 = new CreateBoard3x3();
-    DrawBoard3x3 drawBoard3x3 = new DrawBoard3x3();
+    CreateBoard createBoard = new CreateBoard();
+    DrawBoard drawBoard = new DrawBoard();
     UserGetName userGetName = new UserGetName();
     CheckLine checkLine = new CheckLine();
     UserMove userMove = new UserMove();
@@ -22,8 +22,8 @@ public class StartGame {
 
     public void run() {
         userGetName.getName();
-        createBoard3X3.declarationEmptyBoard();
-        drawBoard3x3.drawBoard(createBoard3X3);
+        createBoard.declarationEmptyBoard();
+        drawBoard.drawBoard(createBoard);
         text = userGetName.getText();
         if (userGetName.getSecondUserName().isEmpty()) {
             userGetName.setSecondUserName(text.computer());
@@ -35,7 +35,7 @@ public class StartGame {
 
     public void runPvP() {
         while (!checkLine.isEndGame()) {
-            userMove.moveGamerUserOne(userGetName, createBoard3X3, drawBoard3x3, checkLine);
+            userMove.moveGamerUserOne(userGetName, createBoard, drawBoard, checkLine);
             count++;
             if (checkLine.isEndGame()) {
                 break;
@@ -43,7 +43,7 @@ public class StartGame {
             if (count == 9) {
                 break;
             }
-            userMove.moveGamerUserTwo(userGetName, createBoard3X3, drawBoard3x3, checkLine);
+            userMove.moveGamerUserTwo(userGetName, createBoard, drawBoard, checkLine);
             count++;
         }
         text = userGetName.getText();
@@ -54,7 +54,7 @@ public class StartGame {
 
     public void runPvE() {
         while (!checkLine.isEndGame()) {
-            userMove.moveGamerUserOne(userGetName, createBoard3X3, drawBoard3x3, checkLine);
+            userMove.moveGamerUserOne(userGetName, createBoard, drawBoard, checkLine);
             count++;
             if (checkLine.isEndGame()) {
                 break;
@@ -63,7 +63,7 @@ public class StartGame {
                 break;
             }
             System.out.println("\n");
-            computerMove.moveComputer(userGetName, createBoard3X3, drawBoard3x3, checkLine);
+            computerMove.moveComputer(userGetName, createBoard, drawBoard, checkLine);
             count++;
         }
         text = userGetName.getText();

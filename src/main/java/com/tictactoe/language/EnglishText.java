@@ -24,7 +24,7 @@ public class EnglishText implements LanguageText {
 
     @Override
     public String fieldSelection() {
-        return " enter the coordinates, first number horizontally →, second number vertically ↓ (e.g. 11 or 23): ";
+        return " enter the coordinates, first number horizontally →, second number vertically ↓ (e.g. 11 or 02): ";
     }
 
     @Override
