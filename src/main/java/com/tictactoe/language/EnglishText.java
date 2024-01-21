@@ -24,7 +24,7 @@ public class EnglishText implements LanguageText {
 
     @Override
     public String fieldSelection() {
-        return " enter the coordinates, first number horizontally →, second number vertically ↓ (e.g. 11 or 02): ";
+        return " enter the coordinates, first number horizontally →, second number vertically ↓ (e.g. 11 or 23): ";
     }
 
     @Override
@@ -50,5 +50,15 @@ public class EnglishText implements LanguageText {
     @Override
     public String computer() {
         return " computer";
+    }
+
+    @Override
+    public void typeOfGame() {
+        System.out.print("Game selection : ");
+    }
+
+    @Override
+    public void badChoice() {
+        System.out.print("Bad choice: ");
     }
 }

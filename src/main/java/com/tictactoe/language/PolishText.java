@@ -24,7 +24,7 @@ public class PolishText implements LanguageText {
 
     @Override
     public String fieldSelection() {
-        return " podaj współrzędne pierwsza liczba poziomo →, druga pionowo ↓ (np 11 lub 02): ";
+        return " podaj współrzędne pierwsza liczba poziomo →, druga pionowo ↓ (np 11 lub 23): ";
     }
 
     @Override
@@ -51,4 +51,15 @@ public class PolishText implements LanguageText {
     public String computer() {
         return "komputer";
     }
+
+    @Override
+    public void typeOfGame() {
+        System.out.print("Wybierz typ gry: ");
+    }
+
+    @Override
+    public void badChoice() {
+        System.out.print("Zły wybór: ");
+    }
+
 }

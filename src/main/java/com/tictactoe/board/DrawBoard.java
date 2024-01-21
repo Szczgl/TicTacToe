@@ -3,9 +3,12 @@ package com.tictactoe.board;
 public class DrawBoard {
 
     public void drawBoard(CreateBoard createBoard) {
-        System.out.println("   0   1   2 " );
         for (int i = 0; i < createBoard.getBoardSize(); i++) {
-            System.out.print(i + "  ");
+            System.out.print("   " + (i + 1));
+        }
+        System.out.println();
+        for (int i = 0; i < createBoard.getBoardSize(); i++) {
+            System.out.print((i + 1) + "  ");
             for (int j = 0; j < createBoard.getBoardSize(); j++) {
                 System.out.print(createBoard.getBoard()[i][j]);
                 if (j < createBoard.getBoardSize() - 1) {

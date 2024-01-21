@@ -1,7 +1,7 @@
 package com.tictactoe.board;
 
 public class CreateBoard {
-    private int boardSize = 3;
+    private int boardSize = 10;
     private String[][] board = new String[boardSize][boardSize];
 
     public int getBoardSize() {
@@ -22,5 +22,9 @@ public class CreateBoard {
 
     public String setBoard(int i, int j, String value) {
             return board[i][j] = value;
+    }
+
+    public void setBoardSize(int boardSize) {
+        this.boardSize = boardSize;
     }
 }

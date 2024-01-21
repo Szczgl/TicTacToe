@@ -12,6 +12,9 @@ public interface LanguageText {
     String draw();
     void choicePvPOrPvE();
     String computer();
+    void typeOfGame();
+    void badChoice();
+
 
 
 

@@ -18,8 +18,8 @@ public class UserChoice {
         text = userGetName.getText();
         if (scanner.hasNextInt()) {
             userChoice = scanner.nextInt();
-            firstNumberI = (userChoice / 10);
-            secondNumberJ = (userChoice % 10);
+            firstNumberI = (userChoice / 10 - 1);
+            secondNumberJ = (userChoice % 10 - 1);
         } else {
             text.incorrectCoordinates();
             scanner.next();

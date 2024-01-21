@@ -22,14 +22,18 @@ public class UserGetName {
 
     public void getName() {
         setLanguageText(languageSelection.chooseLanguage());
+        System.out.println();
         text.userGetNameFirstGamer();
         firstUserName = scanner.nextLine();
         text.choicePvPOrPvE();
         secondUserName = scanner.nextLine();
         if (!secondUserName.isEmpty()) {
+            System.out.println();
             text.hello(firstUserName, secondUserName);
+        } else {
+            System.out.println();
+            text.hello(firstUserName);
         }
-        text.hello(firstUserName);
     }
 
     public String getFirstUserName() {

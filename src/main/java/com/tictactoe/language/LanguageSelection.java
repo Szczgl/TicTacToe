@@ -12,7 +12,7 @@ public class LanguageSelection {
     LanguageText text;
 
     public LanguageText chooseLanguage() {
-        System.out.println("1 - Polski");
+        System.out.println("\n1 - Polski");
         System.out.println("2 - English\n");
         System.out.print("Wybierz język // Choose language : ");
         String languageChoose = scanner.nextLine();
