@@ -41,6 +41,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinOInRowOneLine() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(0,0,"O");
         createBoard.setBoard(0,1,"O");
@@ -48,6 +49,7 @@ public class TicTacToeApplicationTests {
 
         //When
         checkLine.checkLineRow(createBoard, mockUserGetName);
+
 
         //Then
         verify(mockText, times(1)).userWin();
@@ -57,6 +59,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinOInRowFullLine() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         for (int i=0; i<3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -74,6 +77,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinXInRowOneLine() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(0,0,"X");
         createBoard.setBoard(0,1,"X");
@@ -90,6 +94,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinXInRowFullLine() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         for (int i=0; i<3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -108,6 +113,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinOInColumnOneLine() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(0,0,"O");
         createBoard.setBoard(1,0,"O");
@@ -124,6 +130,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinOInColumnFullLine() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         for (int i=0; i<3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -141,6 +148,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinXInColumnOneLine() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(0,0,"X");
         createBoard.setBoard(1,0,"X");
@@ -157,6 +165,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinXInColumnFullLine() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         for (int i=0; i<3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -175,6 +184,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinOInSlash() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(0,0,"O");
         createBoard.setBoard(1,1,"O");
@@ -191,6 +201,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinXInSlash() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(0,0,"X");
         createBoard.setBoard(1,1,"X");
@@ -207,6 +218,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinOInBackslash() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(0,2,"O");
         createBoard.setBoard(1,1,"O");
@@ -223,6 +235,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testWinXInBackslash() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(2,0,"X");
         createBoard.setBoard(1,1,"X");
@@ -239,6 +252,7 @@ public class TicTacToeApplicationTests {
     @Test
     void testDrawNoWin() {
         //Given
+        createBoard.setBoardSize(3);
         createBoard.declarationEmptyBoard();
         createBoard.setBoard(0,0,"X");
         createBoard.setBoard(0,1,"O");

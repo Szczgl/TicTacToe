@@ -13,7 +13,7 @@ public class UserMove {
 
     public void moveGamerUserOne(UserGetName userGetName, CreateBoard createBoard, DrawBoard drawBoard, CheckLine checkLine) {
         text = userGetName.getText();
-        System.out.print("\n" + userGetName.getFirstUserName() + text.fieldSelection());
+        System.out.print("\n" + userGetName.getFirstUserName() + text.fieldSelectionRow());
         userChoice.choiceX(createBoard, userGetName);
         checkLine.checkLineAll(createBoard, userGetName);
         if (!checkLine.isEndGame()) {
@@ -25,7 +25,7 @@ public class UserMove {
 
     public void moveGamerUserTwo(UserGetName userGetName, CreateBoard createBoard, DrawBoard drawBoard, CheckLine checkLine) {
         text = userGetName.getText();
-        System.out.print("\n" + userGetName.getSecondUserName() + text.fieldSelection());
+        System.out.print("\n" + userGetName.getSecondUserName() + text.fieldSelectionRow());
         userChoice.choiceO(createBoard, userGetName);
         checkLine.checkLineAll(createBoard, userGetName);
         if (!checkLine.isEndGame()) {

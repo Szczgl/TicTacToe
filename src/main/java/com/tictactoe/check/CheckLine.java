@@ -9,28 +9,11 @@ public class CheckLine {
     private int countX;
     private int countO;
 
-    private int count0Return;
-    private int countXReturn;
     private int countDownCheckList;
     public boolean endGame = false;
 
     LanguageText text;
 
-    public int getCount0Return() {
-        return count0Return;
-    }
-
-    public int getCountXReturn() {
-        return countXReturn;
-    }
-
-    public int getCountX() {
-        return countX;
-    }
-
-    public int getCountO() {
-        return countO;
-    }
 
     public void checkLineAll(CreateBoard createBoard, UserGetName userGetName) {
         checkLineCol(createBoard, userGetName);
@@ -45,17 +28,55 @@ public class CheckLine {
         while (countDownCheckList >= 0) {
             countX = 0;
             countO = 0;
-            for (int i = 0; i < createBoard.getBoardSize(); i++) {
-                if (createBoard.getBoard()[i][countDownCheckList].equals("X")) {
-                    countX++;
-                    checkWin(userGetName);
+            if (createBoard.getBoardSize() == 10) {
+                for (int i = 0; i < createBoard.getBoardSize(); i++) {
+                    if (createBoard.getBoard()[i][countDownCheckList].equals("X")) {
+                        countX++;
+                        if (countX == 5) {
+                            checkWin(userGetName);
+                            countX = 0;
+                            break;
+                        }
+                        countO = 0;
+                    } else if (createBoard.getBoard()[i][countDownCheckList].equals("O")) {
+                        countO++;
+                        if (countO == 5) {
+                            checkWin(userGetName);
+                            countO = 0;
+                            break;
+                        }
+                        countX = 0;
+                    } else {
+                        countX = 0;
+                        countO = 0;
+                    }
                 }
-                if (createBoard.getBoard()[i][countDownCheckList].equals("O")) {
-                    countO++;
-                    checkWin(userGetName);
+                countDownCheckList--;
+            } else if (createBoard.getBoardSize() == 3) {
+                for (int i = 0; i < createBoard.getBoardSize(); i++) {
+                    if (createBoard.getBoard()[i][countDownCheckList].equals("X")) {
+                        countX++;
+                        if (countX == 3) {
+                            checkWin(userGetName);
+                            countX = 0;
+                            break;
+                        }
+                        countO = 0;
+                    } else if (createBoard.getBoard()[i][countDownCheckList].equals("O")) {
+                        countO++;
+                        if (countO == 3) {
+                            checkWin(userGetName);
+                            countO = 0;
+                            break;
+                        }
+                        countX = 0;
+                    } else {
+                        countX = 0;
+                        countO = 0;
+                    }
                 }
+                countDownCheckList--;
             }
-            countDownCheckList--;
         }
     }
 
@@ -64,59 +85,179 @@ public class CheckLine {
         while (countDownCheckList >= 0) {
             countX = 0;
             countO = 0;
-            for (int i = 0; i < createBoard.getBoardSize(); i++) {
-                if (createBoard.getBoard()[countDownCheckList][i].equals("X")) {
-                    countX++;
-                    checkWin(userGetName);
+            if (createBoard.getBoardSize() == 10) {
+                for (int i = 0; i < createBoard.getBoardSize(); i++) {
+                    if (createBoard.getBoard()[countDownCheckList][i].equals("X")) {
+                        countX++;
+                        if (countX == 5) {
+                            checkWin(userGetName);
+                            countX = 0;
+                            break;
+                        }
+                        countO = 0;
+                    } else if (createBoard.getBoard()[countDownCheckList][i].equals("O")) {
+                        countO++;
+                        if (countO == 5) {
+                            checkWin(userGetName);
+                            countO = 0;
+                            break;
+                        }
+                        countX = 0;
+                    } else {
+                        countX = 0;
+                        countO = 0;
+                    }
                 }
-                if (createBoard.getBoard()[countDownCheckList][i].equals("O")) {
-                    countO++;
-                    checkWin(userGetName);
+                countDownCheckList--;
+            } else if (createBoard.getBoardSize() == 3) {
+                for (int i = 0; i < createBoard.getBoardSize(); i++) {
+                    if (createBoard.getBoard()[countDownCheckList][i].equals("X")) {
+                        countX++;
+                        if (countX == 3) {
+                            checkWin(userGetName);
+                            countX = 0;
+                            break;
+                        }
+                        countO = 0;
+                    } else if (createBoard.getBoard()[countDownCheckList][i].equals("O")) {
+                        countO++;
+                        if (countO == 3) {
+                            checkWin(userGetName);
+                            countO = 0;
+                            break;
+                        }
+                        countX = 0;
+                    } else {
+                        countX = 0;
+                        countO = 0;
+                    }
                 }
+                countDownCheckList--;
             }
-            countDownCheckList--;
         }
     }
 
     public void checkLineSlash(CreateBoard createBoard, UserGetName userGetName) {
-        countX = 0;
-        countO = 0;
-        for (int i = 0; i < createBoard.getBoardSize(); i++) {
-            if (createBoard.getBoard()[i][i].equals("X")) {
-                countX++;
-                checkWin(userGetName);
+        if (createBoard.getBoardSize() == 10) {
+            for (int i = 0; i < createBoard.getBoardSize() - 5; i++) {
+                for (int j = 0; j < createBoard.getBoardSize() - 5; j++) {
+                    countX = 0;
+                    countO = 0;
+                    for (int k = 0; k < 5; k++) {
+                        if (createBoard.getBoard()[i + k][j + k].equals("X")) {
+                            countX++;
+                            if (countX == 5) {
+                                checkWin(userGetName);
+                                countX = 0;
+                                break;
+                            }
+                            countO = 0;
+                        } else if (createBoard.getBoard()[i + k][j + k].equals("O")) {
+                            countO++;
+                            if (countO == 5) {
+                                checkWin(userGetName);
+                                countO = 0;
+                                break;
+                            }
+                            countX = 0;
+                        } else {
+                            countX = 0;
+                            countO = 0;
+                        }
+                    }
+                }
             }
-            if (createBoard.getBoard()[i][i].equals("O")) {
-                countO++;
-                checkWin(userGetName);
+        } else if (createBoard.getBoardSize() == 3) {
+            for (int i = 0; i < createBoard.getBoardSize(); i++) {
+                if (createBoard.getBoard()[i][i].equals("X")) {
+                    countX++;
+                    if (countX == 3) {
+                        checkWin(userGetName);
+                        countX = 0;
+                        break;
+                    }
+                    countO = 0;
+                } else if (createBoard.getBoard()[i][i].equals("O")) {
+                    countO++;
+                    if (countO == 3) {
+                        checkWin(userGetName);
+                        countO = 0;
+                        break;
+                    }
+                    countX = 0;
+                } else {
+                    countX = 0;
+                    countO = 0;
+                }
             }
         }
     }
 
     public void checkLineBackslash(CreateBoard createBoard, UserGetName userGetName) {
-        countX = 0;
-        countO = 0;
-        countDownCheckList = createBoard.getBoardSize() - 1;
-        for (int i = 0; i < createBoard.getBoardSize(); i++) {
-            if (createBoard.getBoard()[i][countDownCheckList].equals("X")) {
-                countX++;
-                checkWin(userGetName);
+        if (createBoard.getBoardSize() == 10) {
+            for (int i = 0; i <= createBoard.getBoardSize() - 5; i++) {
+                for (int j = createBoard.getBoardSize() - 1; j >= 4; j--) {
+                    countX = 0;
+                    countO = 0;
+                    for (int k = 0; k < 5; k++) {
+                        if (createBoard.getBoard()[i + k][j - k].equals("X")) {
+                            countX++;
+                            if (countX == 5) {
+                                checkWin(userGetName);
+                                countX = 0;
+                                break;
+                            }
+                            countO = 0;
+                        } else if (createBoard.getBoard()[i + k][j - k].equals("O")) {
+                            countO++;
+                            if (countO == 5) {
+                                checkWin(userGetName);
+                                countO = 0;
+                                break;
+                            }
+                            countX = 0;
+                        } else {
+                            countX = 0;
+                            countO = 0;
+                        }
+                    }
+                }
             }
-            if (createBoard.getBoard()[i][countDownCheckList].equals("O")) {
-                countO++;
-                checkWin(userGetName);
+        } else if (createBoard.getBoardSize() == 3) {
+            countDownCheckList = createBoard.getBoardSize() - 1;
+            for (int i = 0; i < createBoard.getBoardSize(); i++) {
+                if (createBoard.getBoard()[i][countDownCheckList].equals("X")) {
+                    countX++;
+                    if (countX == 3) {
+                        checkWin(userGetName);
+                        countX = 0;
+                        break;
+                    }
+                    countO = 0;
+                } else if (createBoard.getBoard()[i][countDownCheckList].equals("O")) {
+                    countO++;
+                    if (countO == 3) {
+                        checkWin(userGetName);
+                        countO = 0;
+                        break;
+                    }
+                    countX = 0;
+                } else {
+                    countX = 0;
+                    countO = 0;
+                }
+                countDownCheckList--;
             }
-            countDownCheckList--;
         }
     }
 
     public void checkWin(UserGetName userGetName) {
         text = userGetName.getText();
-        if (countX == 3) {
+        if (countX == 3 || countX == 5) {
             System.out.println("\n" + text.userWin() + userGetName.getFirstUserName() + "\n");
             endGame = true;
         }
-        if (countO == 3) {
+        if (countO == 3 || countO == 5) {
             System.out.println("\n" + text.userWin()  + userGetName.getSecondUserName() + "\n");
             endGame = true;
         }

@@ -1,9 +1,7 @@
 package com.tictactoe.typeOfGame;
 
 import com.tictactoe.board.CreateBoard;
-import com.tictactoe.language.EnglishText;
 import com.tictactoe.language.LanguageText;
-import com.tictactoe.language.PolishText;
 import com.tictactoe.user.UserGetName;
 
 import java.util.Scanner;

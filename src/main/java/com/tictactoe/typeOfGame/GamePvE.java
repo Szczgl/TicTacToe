@@ -23,7 +23,7 @@ public class GamePvE {
             if (checkLine.isEndGame()) {
                 break;
             }
-            if (count == 9) {
+            if (count == createBoard.getBoardSize() * createBoard.getBoardSize()) {
                 break;
             }
             System.out.println("\n");

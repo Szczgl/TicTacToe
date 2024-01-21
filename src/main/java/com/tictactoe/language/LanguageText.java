@@ -5,7 +5,8 @@ public interface LanguageText {
     void userGetNameFirstGamer();
     void hello(String firstUserName, String secondUserName);
     void hello(String firstUserName);
-    String fieldSelection();
+    String fieldSelectionRow();
+    String fieldSelectionColumn();
     String userWin();
     void incorrectCoordinates();
     void fieldOccupied();

@@ -23,8 +23,13 @@ public class EnglishText implements LanguageText {
     }
 
     @Override
-    public String fieldSelection() {
-        return " enter the coordinates, first number horizontally →, second number vertically ↓ (e.g. 11 or 23): ";
+    public String fieldSelectionRow() {
+        return " enter the coordinates, first number horizontally → : ";
+    }
+
+    @Override
+    public String fieldSelectionColumn() {
+        return " second number vertically ↓ : ";
     }
 
     @Override
@@ -34,12 +39,12 @@ public class EnglishText implements LanguageText {
 
     @Override
     public void incorrectCoordinates() {
-        System.out.print("Incorrect coordinates, please enter again: ");
+        System.out.print("Incorrect coordinates, please enter again, first number horizontally → : ");
     }
 
     @Override
     public void fieldOccupied() {
-        System.out.print("Select another field - it is already taken, enter the coordinates again: ");
+        System.out.print("Select another field - it is already taken, enter the coordinates again, first number horizontally → : ");
     }
 
     @Override

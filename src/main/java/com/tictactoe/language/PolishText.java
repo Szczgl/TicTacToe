@@ -23,8 +23,13 @@ public class PolishText implements LanguageText {
     }
 
     @Override
-    public String fieldSelection() {
-        return " podaj współrzędne pierwsza liczba poziomo →, druga pionowo ↓ (np 11 lub 23): ";
+    public String fieldSelectionRow() {
+        return " podaj współrzędne pierwsza liczba poziomo → : ";
+    }
+
+    @Override
+    public String fieldSelectionColumn() {
+        return " druga pionowo ↓ : ";
     }
 
     @Override
@@ -34,12 +39,12 @@ public class PolishText implements LanguageText {
 
     @Override
     public void incorrectCoordinates() {
-        System.out.print("Nieprawidłowe współrzędne, podaj ponownie: ");
+        System.out.print("Nieprawidłowe współrzędne, podaj ponownie, liczba poziomo → : ");
     }
 
     @Override
     public void fieldOccupied() {
-        System.out.print("Wybierz inne pole to już jest zajęte, podaj ponownie współrzędne: ");
+        System.out.print("Wybierz inne pole to już jest zajęte, podaj ponownie współrzędne, liczba poziomo → : ");
     }
 
     @Override

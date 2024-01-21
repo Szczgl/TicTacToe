@@ -14,8 +14,8 @@ public class ComputerChoice {
 
     public void choiceComputer(CreateBoard createBoard) {
 
-        int firstNumberI = random.nextInt(0,3);
-        int secondNumberJ = random.nextInt(0,3);
+        int firstNumberI = random.nextInt(0,createBoard.getBoardSize());
+        int secondNumberJ = random.nextInt(0,createBoard.getBoardSize());
         if ("X".equals(createBoard.getBoard()[firstNumberI][secondNumberJ]) || "O".equals(createBoard.getBoard()[firstNumberI][secondNumberJ])) {
             choiceComputer(createBoard);
         } else {
@@ -112,49 +112,49 @@ public class ComputerChoice {
 
         while (check) {
             if (sum1 == -2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 secondNumberJ = 0;
                 putXOrO(createBoard);
                 break;
             }
             if (sum2 == -2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 secondNumberJ = 1;
                 putXOrO(createBoard);
                 break;
             }
             if (sum3 == -2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 secondNumberJ = 2;
                 putXOrO(createBoard);
                 break;
             }
             if (sum4 == -2) {
                 firstNumberI = 0;
-                secondNumberJ = random.nextInt(0, 3);
+                secondNumberJ = random.nextInt(0, createBoard.getBoardSize());
                 putXOrO(createBoard);
                 break;
             }
             if (sum5 == -2) {
                 firstNumberI = 1;
-                secondNumberJ = random.nextInt(0, 3);
+                secondNumberJ = random.nextInt(0, createBoard.getBoardSize());
                 putXOrO(createBoard);
                 break;
             }
             if (sum6 == -2) {
                 firstNumberI = 2;
-                secondNumberJ = random.nextInt(0, 3);
+                secondNumberJ = random.nextInt(0, createBoard.getBoardSize());
                 putXOrO(createBoard);
                 break;
             }
             if (sum7 == -2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 secondNumberJ = firstNumberI;
                 putXOrO(createBoard);
                 break;
             }
             if (sum8 == -2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 if (firstNumberI == 1) {
                     secondNumberJ = firstNumberI;
                 } else if (firstNumberI == 0) {
@@ -167,49 +167,49 @@ public class ComputerChoice {
             }
 
             if (sum1 == 2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 secondNumberJ = 0;
                 putXOrO(createBoard);
                 break;
             }
             if (sum2 == 2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 secondNumberJ = 1;
                 putXOrO(createBoard);
                 break;
             }
             if (sum3 == 2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 secondNumberJ = 2;
                 putXOrO(createBoard);
                 break;
             }
             if (sum4 == 2) {
                 firstNumberI = 0;
-                secondNumberJ = random.nextInt(0, 3);
+                secondNumberJ = random.nextInt(0, createBoard.getBoardSize());
                 putXOrO(createBoard);
                 break;
             }
             if (sum5 == 2) {
                 firstNumberI = 1;
-                secondNumberJ = random.nextInt(0, 3);
+                secondNumberJ = random.nextInt(0, createBoard.getBoardSize());
                 putXOrO(createBoard);
                 break;
             }
             if (sum6 == 2) {
                 firstNumberI = 2;
-                secondNumberJ = random.nextInt(0, 3);
+                secondNumberJ = random.nextInt(0, createBoard.getBoardSize());
                 putXOrO(createBoard);
                 break;
             }
             if (sum7 == 2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 secondNumberJ = firstNumberI;
                 putXOrO(createBoard);
                 break;
             }
             if (sum8 == 2) {
-                firstNumberI = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
                 if (firstNumberI == 1) {
                     secondNumberJ = firstNumberI;
                 } else if (firstNumberI == 0) {
@@ -223,8 +223,8 @@ public class ComputerChoice {
 
             if ((sum1 <= 1 && sum1 >= -1) || (sum2 <= 1 && sum2 >= -1) || (sum3 <= 1 && sum3 >= -1) || (sum4 <= 1 && sum4 >= -1)
                     || (sum5 <= 1 && sum5 >= -1) || (sum6 <= 1 && sum6 >= -1) || (sum7 <= 1 && sum7 >= -1) || (sum8 <= 1 && sum8 >= -1)) {
-                firstNumberI = random.nextInt(0, 3);
-                secondNumberJ = random.nextInt(0, 3);
+                firstNumberI = random.nextInt(0, createBoard.getBoardSize());
+                secondNumberJ = random.nextInt(0, createBoard.getBoardSize());
                 putXOrO(createBoard);
                 break;
             }

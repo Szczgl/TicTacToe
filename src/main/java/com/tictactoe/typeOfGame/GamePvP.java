@@ -21,7 +21,7 @@ public class GamePvP {
             if (checkLine.isEndGame()) {
                 break;
             }
-            if (count == 9) {
+            if (count == createBoard.getBoardSize() * createBoard.getBoardSize()) {
                 break;
             }
             userMove.moveGamerUserTwo(userGetName, createBoard, drawBoard, checkLine);

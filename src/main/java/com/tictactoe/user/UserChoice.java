@@ -18,15 +18,23 @@ public class UserChoice {
         text = userGetName.getText();
         if (scanner.hasNextInt()) {
             userChoice = scanner.nextInt();
-            firstNumberI = (userChoice / 10 - 1);
-            secondNumberJ = (userChoice % 10 - 1);
+            firstNumberI = userChoice;
         } else {
             text.incorrectCoordinates();
             scanner.next();
             userInput(userGetName);
         }
+        System.out.print(" " + text.fieldSelectionColumn());
+        if (scanner.hasNextInt()) {
+            userChoice = scanner.nextInt();
+            secondNumberJ = userChoice;
+        } else {
+            text.incorrectCoordinates();
+            scanner.next();
+            userInput(userGetName);
+        }
+        System.out.println();
     }
-
 
     public void choiceX(CreateBoard createBoard, UserGetName userGetName) {
         text = userGetName.getText();
